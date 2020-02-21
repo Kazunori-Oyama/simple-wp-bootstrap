@@ -1,1 +1,3 @@
 # simple-wp-bootstrap
+_S（アンダースコアズ）で作ったテーマへBootstrapを組み込んだテンプレートセット。
+workspaceフォルダはBootstrap.cssのカスタムビルドを行うスペースとして利用することを想定している。
