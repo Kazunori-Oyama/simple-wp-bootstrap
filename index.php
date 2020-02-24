@@ -12,7 +12,7 @@
  * @package simple-wp-bootstrap
  */
 
-get_header();
+get_header("type-a");
 ?>
 
 	<div id="primary" class="content-area">
