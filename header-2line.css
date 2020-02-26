@@ -40,18 +40,18 @@
 
 @media (min-width: 640px) {
 
-    .header__main-nav {
-        display: flex;
-        flex-direction: row;
-    }
-    
-    .header__main-nav {
-        position: static;
-        left: 0;
-    }
-    
-    .header__button {
-        display: none;
-    }
-    
-    }
+	.header__main-nav {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.header__main-nav {
+		position: static;
+		left: 0;
+	}
+
+	.header__button {
+		display: none;
+	}
+
+}
