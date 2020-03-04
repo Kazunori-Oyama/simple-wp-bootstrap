@@ -10,7 +10,7 @@ const cssDeclarationSorter = require('css-declaration-sorter');
 const mmq = require('gulp-merge-media-queries');
 
 const compileSass = () =>
-    src("bootstrap-styles/bootstrap.scss")
+    src("sass/*.scss")
     .pipe(
         sass({
             outputStyle: "expanded"
@@ -26,8 +26,8 @@ const compileSass = () =>
         log: true
     }))
 
-    .pipe(dest("bootstrap-styles"));
+    .pipe(dest('../css'));
 
-const watchSassFiles = () => watch("bootstrap-styles/bootstrap.scss", compileSass);
+const watchSassFiles = () => watch("sass/*.scss", compileSass);
 
 exports.default = watchSassFiles;
