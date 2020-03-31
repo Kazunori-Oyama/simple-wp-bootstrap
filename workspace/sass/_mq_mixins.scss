@@ -1,0 +1,28 @@
+$mqS:576px;
+$mqM:768px;
+$mqL:992px;
+$mqXL:1200px;
+
+@mixin mq_S {
+    @media (min-width: ($mqS)) {
+        @content;
+    }
+}
+
+@mixin mq_M {
+    @media (min-width: ($mqM)) {
+        @content;
+    }
+}
+
+@mixin mq_L {
+    @media (min-width: ($mqL)) {
+        @content;
+    }
+}
+
+@mixin mq_XL {
+    @media (min-width: ($mqXL)) {
+        @content;
+    }
+}
