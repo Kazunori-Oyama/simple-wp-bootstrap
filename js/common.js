@@ -10,17 +10,29 @@ jQuery(function ($) {
         }, 500)
     })
     //子メニュー展開
-    $('.menu-item-has-children>a').on('click', function (event) {
+    $('.menu-item-has-children').on('click', function (event) {
+        // event.stopPropagation()
         event.preventDefault();
-        var $clickedElem = $(this);
-        var $siblings = $(this).parent('.menu-item-has-children').siblings().children('.sub-menu');
-        $($siblings).each(function () {
-            $(this).slideUp('slow', function () {
-                $($clickedElem).next('.sub-menu').slideToggle('slow');
-            })
-        })
-        $(this).toggleClass('js-icon-change');
+        var $this = $(this);
+        var $openElem = $('.js-icon-change');
+        var $openElemId = $($openElem).attr('id');
+        var $thisId = $this.attr('id')
+        console.log($openElem);
+        if ($openElem.length >= 1) {
+            if ($openElemId == $thisId) {
+                $this.find('.sub-menu').slideUp('slow');
+                $this.toggleClass('js-icon-change');
+            } else {
+                $($openElem).toggleClass('js-icon-change');
+                $($openElem).find('.sub-menu').slideUp('slow', function () {
+                    $this.find('.sub-menu').slideDown('slow');
+                    $this.toggleClass('js-icon-change');
+                });
+            }
 
-
+        } else {
+            $this.find('.sub-menu').slideDown('slow');
+            $this.toggleClass('js-icon-change');
+        }
     })
 })
